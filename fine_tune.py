@@ -10,7 +10,7 @@ def csv_to_jsonl(csv_data):
     for row in reader:
         json_line = {
             "messages": [
-                {"role": "system", "content": "SaaS all Folks is a fictional company known for being the best SaaS provider."},
+                {"role": "system", "content": row['system']},  # Use the system prompt from the CSV
                 {"role": "user", "content": row['user']},
                 {"role": "assistant", "content": row['assistant']}
             ]
